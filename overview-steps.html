@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+        <th>Number</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Cucumber HTML Reports</td>
+        <td>1</td>
+      <td>01 Jul 2021, 18:21</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">org.themoviedb.step_definition.Hooks.setUp()</td>
+              <td>10</td>
+              <td class="duration" data-value="419729900">0.419</td>
+              <td class="duration" data-value="419729900">2.099</td>
+              <td class="duration" data-value="4197299000">4.197</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.themoviedb.step_definition.negativeRateMovieStepDefs.the_response_status_code_should_be_and_should_be(int,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="459121000">0.459</td>
+              <td class="duration" data-value="459121000">0.459</td>
+              <td class="duration" data-value="459121000">0.459</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.themoviedb.step_definition.negativeRateMovieStepDefs.user_send_request_to_endpoint_with_invalid_or_and_following_valid_query_params(java.lang.String,java.lang.String,java.lang.String,java.util.Map&lt;java.lang.String, java.lang.String&gt;)</td>
+              <td>1</td>
+              <td class="duration" data-value="179708000">0.179</td>
+              <td class="duration" data-value="179708000">0.179</td>
+              <td class="duration" data-value="179708000">0.179</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.themoviedb.step_definition.negativeTopRatedStepDefs.the_response_code_should_be(int)</td>
+              <td>4</td>
+              <td class="duration" data-value="95250">0.000</td>
+              <td class="duration" data-value="95250">0.000</td>
+              <td class="duration" data-value="381000">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.themoviedb.step_definition.negativeTopRatedStepDefs.the_response_should_be(java.lang.String,java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="179087500">0.179</td>
+              <td class="duration" data-value="179087500">0.664</td>
+              <td class="duration" data-value="716350000">0.716</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.themoviedb.step_definition.negativeTopRatedStepDefs.user_request_to_endpoint_with_invalid_and_following_query_params(java.lang.String,java.lang.String,java.util.Map&lt;java.lang.String, java.lang.String&gt;)</td>
+              <td>4</td>
+              <td class="duration" data-value="388302250">0.388</td>
+              <td class="duration" data-value="388302250">1.270</td>
+              <td class="duration" data-value="1553209000">1.553</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.themoviedb.step_definition.positiveRateMovieStepDefs.the_response_status_code_should_be_and_should_be(int,java.lang.String,java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="16806000">0.016</td>
+              <td class="duration" data-value="16806000">0.016</td>
+              <td class="duration" data-value="16806000">0.016</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.themoviedb.step_definition.positiveRateMovieStepDefs.user_send_request_to_endpoint_with_following_valid_query_params(java.lang.String,java.util.Map&lt;java.lang.String, java.lang.String&gt;)</td>
+              <td>1</td>
+              <td class="duration" data-value="86021000">0.086</td>
+              <td class="duration" data-value="86021000">0.086</td>
+              <td class="duration" data-value="86021000">0.086</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.themoviedb.step_definition.positiveTopRatedStepDefs.check_the_api_with_valid_and_the_api_should_be_available(java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="273290666">0.273</td>
+              <td class="duration" data-value="273290666">1.273</td>
+              <td class="duration" data-value="1639744000">1.639</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.themoviedb.step_definition.positiveTopRatedStepDefs.the_response_code_should_be_and_page_number_should_be(int,int)</td>
+              <td>4</td>
+              <td class="duration" data-value="53215750">0.053</td>
+              <td class="duration" data-value="53215750">0.087</td>
+              <td class="duration" data-value="212863000">0.212</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">org.themoviedb.step_definition.positiveTopRatedStepDefs.user_request_to_endpoint_with_valid_and_following_query_params(java.lang.String,java.lang.String,java.util.Map&lt;java.lang.String, java.lang.String&gt;)</td>
+              <td>4</td>
+              <td class="duration" data-value="65630750">0.065</td>
+              <td class="duration" data-value="65630750">0.076</td>
+              <td class="duration" data-value="262523000">0.262</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>11</td>
+            <td>40</td>
+            <td class="duration">0.233</td>
+            <td class="duration">4.197</td>
+            <td class="duration">9.324</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
